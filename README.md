@@ -90,14 +90,12 @@ src
 
 ### API
 
-- [Swagger](http://localhost:5000/api)
+- [Swagger](http://localhost:8000/api)
 
 - ![image](https://github.com/AndreyElyan/golden-raspberry-api/assets/46023665/abad6417-b7de-4af0-9290-58c1e7ba4988)
-
 
 ### TESTS
 
 We have 100% dude!
 
 ![image](https://github.com/AndreyElyan/golden-raspberry-api/assets/46023665/98b7afdf-cdd1-43d9-a24c-609503e2ecb8)
-
