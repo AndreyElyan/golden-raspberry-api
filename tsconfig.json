@@ -19,6 +19,7 @@
       "@infra-repositories/*": [
         "src/infra/database/prisma/infra-repositories/*"
       ],
+      "@helpers/*": ["src/helpers/*"],
       "domain-repositories/*": ["src/domain/domain-repositories/*"]
     },
     "incremental": true,
