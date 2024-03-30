@@ -8,6 +8,7 @@ import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWit
 import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTwoAwardsFaster';
 import { FindYearsWithMultipleWinnersUseCase } from '@app/use-cases/findYearsWithMultipleWinnersUseCase';
 import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWithMostVictories';
+import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCase';
 
 @Module({
   imports: [DatabaseModule],
@@ -19,6 +20,7 @@ import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWi
     GetProducerWithTwoAwardsFaster,
     FindYearsWithMultipleWinnersUseCase,
     OrderByStudiosWithMostVictories,
+    FindWinnersByYearUseCase,
   ],
   controllers: [MoviesController],
 })

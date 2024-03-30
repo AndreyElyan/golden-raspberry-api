@@ -1,11 +1,12 @@
 import { FindManyMovies } from '@app/use-cases/findManyMoviesUseCase';
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { FindMovieResponseDto } from '../dtos/movies/find-movie.dto';
 import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWithMaxIntervalUseCase';
 import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTwoAwardsFaster';
 import { FindYearsWithMultipleWinnersUseCase } from '@app/use-cases/findYearsWithMultipleWinnersUseCase';
 import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWithMostVictories';
+import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCase';
 
 @Controller('movies')
 @ApiTags('Movies')
@@ -16,6 +17,7 @@ export class MoviesController {
     private getProducerWithTwoAwardsFasterMethod: GetProducerWithTwoAwardsFaster,
     private findYearsWithMultipleWinnersMethod: FindYearsWithMultipleWinnersUseCase,
     private orderByStudiosWithMostVictoriesMethod: OrderByStudiosWithMostVictories,
+    private FindWinnersByYearUseCaseMethod: FindWinnersByYearUseCase,
   ) {}
 
   @Get('/')
@@ -67,5 +69,15 @@ export class MoviesController {
   })
   async orderByStudiosWithMostVictories() {
     return await this.orderByStudiosWithMostVictoriesMethod.execute();
+  }
+
+  @Get('/winners-by-year/:year')
+  @ApiOperation({ summary: 'Get Winners By Year' })
+  @ApiResponse({
+    status: 201,
+    description: 'Winners By Year',
+  })
+  async findWinnersByYear(@Param('year') year: string) {
+    return await this.FindWinnersByYearUseCaseMethod.execute(year);
   }
 }

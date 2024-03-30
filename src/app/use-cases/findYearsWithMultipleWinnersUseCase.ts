@@ -8,18 +8,16 @@ export class FindYearsWithMultipleWinnersUseCase {
   constructor(private moviesRepository: MoviesRepository) {}
 
   async execute() {
-    const movies: Movie[] = await this.moviesRepository.findManyMovies();
+    const movies: Movie[] =
+      await this.moviesRepository.findManyMoviesByWinner();
 
     const yearsWithMultipleWinners: { [year: string]: Movie[] } = {};
-    const isWinner = (movie: Movie) => movie.winner === 'yes';
 
     movies.forEach((movie) => {
-      if (isWinner(movie)) {
-        if (yearsWithMultipleWinners[movie.year]) {
-          yearsWithMultipleWinners[movie.year].push(movie);
-        } else {
-          yearsWithMultipleWinners[movie.year] = [movie];
-        }
+      if (yearsWithMultipleWinners[movie.year]) {
+        yearsWithMultipleWinners[movie.year].push(movie);
+      } else {
+        yearsWithMultipleWinners[movie.year] = [movie];
       }
     });
 

@@ -7,10 +7,6 @@ import { Injectable } from '@nestjs/common';
 export class OrderByStudiosWithMostVictories {
   constructor(private moviesRepository: MoviesRepository) {}
 
-  private isWinner(movie: Movie) {
-    return movie.winner === 'yes';
-  }
-
   private movieInfo(movie: Movie) {
     return {
       title: movie.title,
@@ -23,24 +19,24 @@ export class OrderByStudiosWithMostVictories {
     const studiosWithMostVictories: { [studio: string]: Movie[] } = {};
 
     movies.forEach((movie) => {
-      if (this.isWinner(movie)) {
-        const studios = movie.studios.split(/ and |, /);
-        studios.forEach((studio) => {
-          if (studiosWithMostVictories[studio]) {
-            studiosWithMostVictories[studio].push(movie);
-          } else {
-            studiosWithMostVictories[studio] = [movie];
-          }
-        });
-      }
+      const studios = movie.studios.split(/ and |, /);
+      studios.forEach((studio) => {
+        if (studiosWithMostVictories[studio]) {
+          studiosWithMostVictories[studio].push(movie);
+        } else {
+          studiosWithMostVictories[studio] = [movie];
+        }
+      });
     });
 
     return studiosWithMostVictories;
   }
 
   async execute() {
-    const movies: Movie[] = await this.moviesRepository.findManyMovies();
-    const studiosWithMostVictories = this.processMovies(movies);
+    const winnerMovies: Movie[] =
+      await this.moviesRepository.findManyMoviesByWinner();
+
+    const studiosWithMostVictories = this.processMovies(winnerMovies);
 
     const studios = Object.keys(studiosWithMostVictories).sort(
       (studioA, studioB) =>
