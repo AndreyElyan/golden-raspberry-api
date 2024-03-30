@@ -36,7 +36,7 @@ export class InMemoryMoviesRepository implements MoviesRepository {
   ];
 
   async findManyMovies(): Promise<Movie[]> {
-    return this.movies;
+    return this.findManyMoviesResponse;
   }
 
   async getMovieById(id: number): Promise<Movie | null> {
