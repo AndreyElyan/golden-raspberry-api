@@ -10,6 +10,7 @@ import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCas
 import { FindManyMoviesByFilterUseCase } from '@app/use-cases/findManyMoviesByFilterUseCase';
 import { FindMovieFilterDTOBody } from '../dtos/movies/find-movies-filter-body.dto';
 import { SearchMovieByTextUseCase } from '@app/use-cases/searchMovieByTextUseCase';
+import { GetAwardsRangeUseCase } from '@app/use-cases/getAwardRangeUseCase';
 
 @Controller('movies')
 @ApiTags('Movies')
@@ -23,6 +24,7 @@ export class MoviesController {
     private FindWinnersByYearUseCaseMethod: FindWinnersByYearUseCase,
     private findManyMoviesByFilterMethod: FindManyMoviesByFilterUseCase,
     private searchMovieByTextMethod: SearchMovieByTextUseCase,
+    private getAwardRangeUseCaseMethod: GetAwardsRangeUseCase,
   ) {}
 
   @Get('/')
@@ -34,6 +36,16 @@ export class MoviesController {
   })
   async findManyMovies() {
     return await this.findManyMoviesMethod.execute();
+  }
+
+  @Get('/awards-range')
+  @ApiOperation({ summary: 'Get Awards Range' })
+  @ApiResponse({
+    status: 201,
+    description: 'Awards Range',
+  })
+  async getAwardsRange() {
+    return await this.getAwardRangeUseCaseMethod.execute();
   }
 
   @Post('/filter')

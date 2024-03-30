@@ -4,7 +4,7 @@ interface ProducerAwards {
   [producer: string]: string;
 }
 
-const updateInterval = (
+export const updateInterval = (
   producer: string,
   currentYear: string,
   isWinner: boolean,
@@ -29,7 +29,7 @@ const updateInterval = (
   return { currentBestInterval, currentBestProducer };
 };
 
-const processAwards = (
+export const processAwards = (
   awards: Movie[],
   lastAwardDateByProducer: ProducerAwards,
   intervalComparison: (
@@ -61,7 +61,7 @@ const processAwards = (
   return { currentBestInterval, currentBestProducer };
 };
 
-const sortAwardsByYear = (awards: Movie[]) => {
+export const sortAwardsByYear = (awards: Movie[]) => {
   return awards.sort(
     (awardA, awardB) => parseInt(awardA.year) - parseInt(awardB.year),
   );

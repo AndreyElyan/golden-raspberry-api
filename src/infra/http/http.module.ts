@@ -11,6 +11,7 @@ import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWi
 import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCase';
 import { FindManyMoviesByFilterUseCase } from '@app/use-cases/findManyMoviesByFilterUseCase';
 import { SearchMovieByTextUseCase } from '@app/use-cases/searchMovieByTextUseCase';
+import { GetAwardsRangeUseCase } from '@app/use-cases/getAwardRangeUseCase';
 
 @Module({
   imports: [DatabaseModule],
@@ -25,6 +26,7 @@ import { SearchMovieByTextUseCase } from '@app/use-cases/searchMovieByTextUseCas
     FindWinnersByYearUseCase,
     FindManyMoviesByFilterUseCase,
     SearchMovieByTextUseCase,
+    GetAwardsRangeUseCase,
   ],
   controllers: [MoviesController],
 })
