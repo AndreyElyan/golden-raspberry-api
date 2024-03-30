@@ -25,7 +25,6 @@ export class MoviesController {
     return await this.findManyMoviesMethod.execute();
   }
 
-  @ApiTags('Get Producer With Longest Interval')
   @Get('/producer-with-longest-interval')
   @ApiOperation({ summary: 'Get Producer With Longest Interval' })
   @ApiResponse({
@@ -36,7 +35,6 @@ export class MoviesController {
     return await this.getProducerWithLongestIntervalMethod.execute();
   }
 
-  @ApiTags('Get Producer With Two Awards Faster')
   @Get('/producer-with-two-awards-faster')
   @ApiOperation({ summary: 'Get Producer With Two Awards Faster' })
   @ApiResponse({

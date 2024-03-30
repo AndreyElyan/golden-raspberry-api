@@ -29,68 +29,78 @@ const updateInterval = (
   return { currentBestInterval, currentBestProducer };
 };
 
+const processAwards = (
+  awards: Movie[],
+  lastAwardDateByProducer: ProducerAwards,
+  intervalComparison: (
+    interval: number,
+    currentBestInterval: number,
+  ) => boolean,
+  currentBestInterval: number,
+  currentBestProducer: string | undefined,
+) => {
+  awards.forEach((award) => {
+    const isWinner = award.winner === 'yes';
+    const producers = award.producers
+      .split(',')
+      .map((producer) => producer.trim());
+    producers.forEach((producer) => {
+      const result = updateInterval(
+        producer,
+        award.year,
+        isWinner,
+        lastAwardDateByProducer,
+        intervalComparison,
+        currentBestInterval,
+        currentBestProducer,
+      );
+      currentBestInterval = result.currentBestInterval;
+      currentBestProducer = result.currentBestProducer;
+    });
+  });
+  return { currentBestInterval, currentBestProducer };
+};
+
+const sortAwardsByYear = (awards: Movie[]) => {
+  return awards.sort(
+    (awardA, awardB) => parseInt(awardA.year) - parseInt(awardB.year),
+  );
+};
+
 const findProducerWithLongestInterval = (awards: Movie[]) => {
-  let longestInterval = 0;
+  const longestInterval = 0;
   let producerWithLongestInterval: string | undefined;
   const lastAwardDateByProducer: ProducerAwards = {};
 
-  awards.sort(
-    (awardA, awardB) => parseInt(awardA.year) - parseInt(awardB.year),
+  const sortedAwards = sortAwardsByYear(awards);
+
+  const result = processAwards(
+    sortedAwards,
+    lastAwardDateByProducer,
+    (interval, currentBest) => interval > currentBest,
+    longestInterval,
+    producerWithLongestInterval,
   );
 
-  awards.forEach((award) => {
-    const isWinner = award.winner === 'yes';
-    const producers = award.producers
-      .split(',')
-      .map((producer) => producer.trim());
-    producers.forEach((producer) => {
-      const result = updateInterval(
-        producer,
-        award.year,
-        isWinner,
-        lastAwardDateByProducer,
-        (interval, currentBest) => interval > currentBest,
-        longestInterval,
-        producerWithLongestInterval,
-      );
-      longestInterval = result.currentBestInterval;
-      producerWithLongestInterval = result.currentBestProducer;
-    });
-  });
-
-  return { producerWithLongestInterval };
+  return { producerWithLongestInterval: result.currentBestProducer };
 };
 
 const findProducerWithFastestTwoAwards = (awards: Movie[]) => {
-  let fastestTwoAwardsInterval = Number.MAX_SAFE_INTEGER;
+  const fastestTwoAwardsInterval = Number.MAX_SAFE_INTEGER;
   let producerWithFastestTwoAwards: string | undefined;
   const lastAwardDateByProducer: ProducerAwards = {};
 
-  awards.sort(
-    (awardA, awardB) => parseInt(awardA.year) - parseInt(awardB.year),
+  const sortedAwards = sortAwardsByYear(awards);
+
+  const result = processAwards(
+    sortedAwards,
+    lastAwardDateByProducer,
+    (interval, currentBest) => interval < currentBest,
+    fastestTwoAwardsInterval,
+    producerWithFastestTwoAwards,
   );
 
-  awards.forEach((award) => {
-    const isWinner = award.winner === 'yes';
-    const producers = award.producers
-      .split(',')
-      .map((producer) => producer.trim());
-    producers.forEach((producer) => {
-      const result = updateInterval(
-        producer,
-        award.year,
-        isWinner,
-        lastAwardDateByProducer,
-        (interval, currentBest) => interval < currentBest,
-        fastestTwoAwardsInterval,
-        producerWithFastestTwoAwards,
-      );
-      fastestTwoAwardsInterval = result.currentBestInterval;
-      producerWithFastestTwoAwards = result.currentBestProducer;
-    });
-  });
-
-  return { producerWithFastestTwoAwards };
+  return { producerWithFastestTwoAwards: result.currentBestProducer };
 };
 
 export { findProducerWithLongestInterval, findProducerWithFastestTwoAwards };
