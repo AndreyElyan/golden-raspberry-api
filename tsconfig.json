@@ -13,10 +13,11 @@
     "paths": {
       "@domain/*": ["src/domain/*"],
       "@infra/*": ["src/infra/*"],
-      "@models/*": ["src/models/*"],
+      "@models/*": ["src/domain/models/*"],
       "@app/`*`": ["src/app/*"],
       "@useCases/*": ["src/app/useCases/*"],
-      "@repositories/*": ["src/infra/repositories/*"]
+      "@infra-repositories/*": ["src/infra/infra-repositories/*"],
+      "domain-repositories/*": ["src/domain/domain-repositories/*"]
     },
     "incremental": true,
     "skipLibCheck": true,
