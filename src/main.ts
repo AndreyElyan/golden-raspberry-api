@@ -9,8 +9,8 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setVersion('1.0')
     .addBearerAuth()
-    .setTitle('Long Trip Backend API')
-    .setDescription('Backend API for Long Trip')
+    .setTitle('Golden Raspberry Awards Backend API')
+    .setDescription('Backend API for Golden Raspberry Awards')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

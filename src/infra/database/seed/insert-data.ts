@@ -22,6 +22,11 @@ async function insertData() {
         data.push(row);
       })
       .on('end', async () => {
+        const hasTheTableData = await prisma.movie.findMany();
+        if (hasTheTableData.length > 0) {
+          console.log('Data already inserted');
+          return;
+        }
         console.log('Inserting data...');
         for (const row of data) {
           await prisma.movie.create({
