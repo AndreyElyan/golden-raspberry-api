@@ -53,6 +53,7 @@ $ npx migrate revert
 
 ## Docs
 
+```bash
 Folder structure:
 
 This project follows the Clean Architecture principles, so the folder structure is divided into three layers: Application, Domain, and Infrastructure.
@@ -60,6 +61,9 @@ This project follows the Clean Architecture principles, so the folder structure 
 SOLID principles are also followed, so the code is organized in a way that is easy to maintain and test.
 
 DDD (Domain-Driven Design) is also used to separate the business rules from the infrastructure.
+
+
+```
 
 ```
 src
