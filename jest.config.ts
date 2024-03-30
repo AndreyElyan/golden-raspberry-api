@@ -10,12 +10,15 @@ const config: Config = {
   },
   rootDir: '.',
   collectCoverageFrom: [
-    'src/**/*.{ts,js}', // Include all ts and js files
-    '!src/**/*.spec.{ts,js}', // Exclude all test files
-    '!src/**/*mock*.{ts,js}', // Exclude all mock files
-    '!**/node_modules/**', // Exclude node_modules
-    '!**/dist/**', // Exclude dist
-    '!**/coverage/**', // Exclude coverage
+    'src/**/*.{ts,js}',
+    '!src/**/*.spec.{ts,js}',
+    '!src/**/*mock*.{ts,js}',
+    '!**/node_modules/**',
+    '!**/dist/**',
+    '!**/coverage/**',
+    '!**/*.module.ts',
+    '!**/main.ts',
+    '!src/infra/database/seed/**',
   ],
   coverageDirectory: './coverage',
   testEnvironment: 'node',

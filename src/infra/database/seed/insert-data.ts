@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 
 const csvFilePath = 'src/infra/database/seed/csv/movieList.csv';
 
-async function insertData() {
+export default async function insertData() {
   const data = [];
 
   try {
