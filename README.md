@@ -10,6 +10,7 @@
 
 ```bash
 $ yarn install
+$ npx migrate dev
 ```
 
 ## Running the app
