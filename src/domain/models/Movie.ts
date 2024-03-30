@@ -1,10 +1,10 @@
 interface Movie {
   id: number;
-  year: number;
+  year: string;
   title: string;
   studios: string;
   producers: string;
-  winner: boolean;
+  winner: string;
 }
 
 export default Movie;
