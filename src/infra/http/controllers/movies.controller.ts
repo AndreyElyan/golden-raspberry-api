@@ -9,6 +9,7 @@ import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWi
 import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCase';
 import { FindManyMoviesByFilterUseCase } from '@app/use-cases/findManyMoviesByFilterUseCase';
 import { FindMovieFilterDTOBody } from '../dtos/movies/find-movies-filter-body.dto';
+import { SearchMovieByTextUseCase } from '@app/use-cases/searchMovieByTextUseCase';
 
 @Controller('movies')
 @ApiTags('Movies')
@@ -21,6 +22,7 @@ export class MoviesController {
     private orderByStudiosWithMostVictoriesMethod: OrderByStudiosWithMostVictories,
     private FindWinnersByYearUseCaseMethod: FindWinnersByYearUseCase,
     private findManyMoviesByFilterMethod: FindManyMoviesByFilterUseCase,
+    private searchMovieByTextMethod: SearchMovieByTextUseCase,
   ) {}
 
   @Get('/')
@@ -53,6 +55,17 @@ export class MoviesController {
       title,
       page,
     });
+  }
+
+  @Get('/search/:text')
+  @ApiOperation({ summary: 'Search Movies By Text' })
+  @ApiResponse({
+    status: 201,
+    description: 'Movies List',
+    type: [FindMovieResponseDto],
+  })
+  async searchMovieByText(@Param('text') text: string) {
+    return await this.searchMovieByTextMethod.execute(text);
   }
 
   @Get('/producer-with-longest-interval')

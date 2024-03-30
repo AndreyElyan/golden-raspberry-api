@@ -10,6 +10,7 @@ import { FindYearsWithMultipleWinnersUseCase } from '@app/use-cases/findYearsWit
 import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWithMostVictories';
 import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCase';
 import { FindManyMoviesByFilterUseCase } from '@app/use-cases/findManyMoviesByFilterUseCase';
+import { SearchMovieByTextUseCase } from '@app/use-cases/searchMovieByTextUseCase';
 
 @Module({
   imports: [DatabaseModule],
@@ -23,6 +24,7 @@ import { FindManyMoviesByFilterUseCase } from '@app/use-cases/findManyMoviesByFi
     OrderByStudiosWithMostVictories,
     FindWinnersByYearUseCase,
     FindManyMoviesByFilterUseCase,
+    SearchMovieByTextUseCase,
   ],
   controllers: [MoviesController],
 })
