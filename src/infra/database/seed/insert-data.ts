@@ -5,7 +5,7 @@ const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
-const csvFilePath = 'src/infra/csv/movieList.csv';
+const csvFilePath = 'src/infra/database/seed/csv/movieList.csv';
 
 async function insertData() {
   const data = [];

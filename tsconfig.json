@@ -15,8 +15,10 @@
       "@infra/*": ["src/infra/*"],
       "@models/*": ["src/domain/models/*"],
       "@app/`*`": ["src/app/*"],
-      "@useCases/*": ["src/app/useCases/*"],
-      "@infra-repositories/*": ["src/infra/infra-repositories/*"],
+      "@use-cases/*": ["src/app/use-ases/*"],
+      "@infra-repositories/*": [
+        "src/infra/database/prisma/infra-repositories/*"
+      ],
       "domain-repositories/*": ["src/domain/domain-repositories/*"]
     },
     "incremental": true,

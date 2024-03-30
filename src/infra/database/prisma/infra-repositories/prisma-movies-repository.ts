@@ -1,7 +1,7 @@
 import { MovieRepository } from '@domain/domain-repositories/MovieRepository';
 import Movie from '@domain/models/Movie';
 
-export class InMemoryMovieRepository implements MovieRepository {
+export class PrismaMoviesRepository implements MovieRepository {
   private movies: Movie[] = [];
 
   async getAllMovies(): Promise<Movie[]> {
