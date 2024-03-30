@@ -9,6 +9,7 @@ import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTw
 import { FindYearsWithMultipleWinnersUseCase } from '@app/use-cases/findYearsWithMultipleWinnersUseCase';
 import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWithMostVictories';
 import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCase';
+import { FindManyMoviesByFilterUseCase } from '@app/use-cases/findManyMoviesByFilterUseCase';
 
 @Module({
   imports: [DatabaseModule],
@@ -21,6 +22,7 @@ import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCas
     FindYearsWithMultipleWinnersUseCase,
     OrderByStudiosWithMostVictories,
     FindWinnersByYearUseCase,
+    FindManyMoviesByFilterUseCase,
   ],
   controllers: [MoviesController],
 })

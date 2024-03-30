@@ -6,6 +6,7 @@ export interface IFindMoviesByFilters {
   producer?: string;
   winner?: boolean;
   title?: string;
+  page?: number;
 }
 export abstract class MoviesRepository {
   abstract findManyMovies(): Promise<Movie[]>;

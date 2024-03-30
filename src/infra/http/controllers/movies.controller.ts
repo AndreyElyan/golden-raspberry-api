@@ -1,5 +1,5 @@
 import { FindManyMovies } from '@app/use-cases/findManyMoviesUseCase';
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { FindMovieResponseDto } from '../dtos/movies/find-movie.dto';
 import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWithMaxIntervalUseCase';
@@ -7,6 +7,8 @@ import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTw
 import { FindYearsWithMultipleWinnersUseCase } from '@app/use-cases/findYearsWithMultipleWinnersUseCase';
 import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWithMostVictories';
 import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCase';
+import { FindManyMoviesByFilterUseCase } from '@app/use-cases/findManyMoviesByFilterUseCase';
+import { FindMovieFilterDTOBody } from '../dtos/movies/find-movies-filter-body.dto';
 
 @Controller('movies')
 @ApiTags('Movies')
@@ -18,6 +20,7 @@ export class MoviesController {
     private findYearsWithMultipleWinnersMethod: FindYearsWithMultipleWinnersUseCase,
     private orderByStudiosWithMostVictoriesMethod: OrderByStudiosWithMostVictories,
     private FindWinnersByYearUseCaseMethod: FindWinnersByYearUseCase,
+    private findManyMoviesByFilterMethod: FindManyMoviesByFilterUseCase,
   ) {}
 
   @Get('/')
@@ -29,6 +32,27 @@ export class MoviesController {
   })
   async findManyMovies() {
     return await this.findManyMoviesMethod.execute();
+  }
+
+  @Post('/filter')
+  @ApiOperation({ summary: 'Get Movies By Filters' })
+  @ApiResponse({
+    status: 201,
+    description: 'Movies List',
+    type: [FindMovieResponseDto],
+  })
+  async findManyMoviesByFilter(
+    @Body()
+    { year, studio, producer, winner, title, page }: FindMovieFilterDTOBody,
+  ) {
+    return await this.findManyMoviesByFilterMethod.execute({
+      year,
+      studio,
+      producer,
+      winner,
+      title,
+      page,
+    });
   }
 
   @Get('/producer-with-longest-interval')

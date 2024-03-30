@@ -73,7 +73,7 @@ export class PrismaMoviesRepository implements MoviesRepository {
   }
 
   findMoviesByFilters(filters: IFindMoviesByFilters): Promise<Movie[]> {
-    const { year, studio, producer, winner, title } = filters;
+    const { year, studio, producer, winner, title, page } = filters;
     const movies = this.prismaService.movie.findMany({
       where: {
         year,
@@ -88,6 +88,8 @@ export class PrismaMoviesRepository implements MoviesRepository {
           contains: title,
         },
       },
+      take: 10,
+      skip: page ? (page - 1) * 10 : 0,
     });
 
     return movies;
