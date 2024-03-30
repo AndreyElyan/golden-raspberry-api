@@ -5,6 +5,7 @@ import { Module } from '@nestjs/common';
 import { MoviesController } from './controllers/movies.controller';
 import { FindManyMovies } from '@app/use-cases/findManyMoviesUseCase';
 import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWithMaxIntervalUseCase';
+import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTwoAwardsFaster';
 
 @Module({
   imports: [DatabaseModule],
@@ -13,6 +14,7 @@ import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWit
     PrismaService,
     FindManyMovies,
     GetProducerWithMaxIntervalUseCase,
+    GetProducerWithTwoAwardsFaster,
   ],
   controllers: [MoviesController],
 })

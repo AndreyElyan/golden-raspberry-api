@@ -3,6 +3,7 @@ import { Controller, Get } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { FindMovieResponseDto } from '../dtos/movies/find-movie.dto';
 import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWithMaxIntervalUseCase';
+import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTwoAwardsFaster';
 
 @Controller('movies')
 @ApiTags('Movies')
@@ -10,6 +11,7 @@ export class MoviesController {
   constructor(
     private findManyMoviesMethod: FindManyMovies,
     private getProducerWithLongestIntervalMethod: GetProducerWithMaxIntervalUseCase,
+    private getProducerWithTwoAwardsFasterMethod: GetProducerWithTwoAwardsFaster,
   ) {}
 
   @Get('/')
@@ -32,5 +34,16 @@ export class MoviesController {
   })
   async findProducerWithLongestInterval() {
     return await this.getProducerWithLongestIntervalMethod.execute();
+  }
+
+  @ApiTags('Get Producer With Two Awards Faster')
+  @Get('/producer-with-two-awards-faster')
+  @ApiOperation({ summary: 'Get Producer With Two Awards Faster' })
+  @ApiResponse({
+    status: 201,
+    description: 'Producer With Two Awards Faster',
+  })
+  async findProducerWithTwoAwardsFaster() {
+    return await this.getProducerWithTwoAwardsFasterMethod.execute();
   }
 }
