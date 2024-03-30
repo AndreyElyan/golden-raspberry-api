@@ -1,10 +1,8 @@
-import {
-  IFindMoviesByFilters,
-  MoviesRepository,
-} from '@domain/domain-repositories/MoviesRepository';
+import { MoviesRepository } from '@domain/domain-repositories/MoviesRepository';
 import Movie from '@domain/models/Movie';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
+import { IFindMoviesByFilters } from '@app/entities/FindMoviesByFilter';
 
 @Injectable()
 export class PrismaMoviesRepository implements MoviesRepository {

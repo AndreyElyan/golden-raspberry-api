@@ -1,13 +1,6 @@
+import { IFindMoviesByFilters } from '@app/entities/FindMoviesByFilter';
 import Movie from '@domain/models/Movie';
 
-export interface IFindMoviesByFilters {
-  year?: string;
-  studio?: string;
-  producer?: string;
-  winner?: boolean;
-  title?: string;
-  page?: number;
-}
 export abstract class MoviesRepository {
   abstract findManyMovies(): Promise<Movie[]>;
   abstract getMovieById(id: number): Promise<Movie | null>;

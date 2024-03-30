@@ -1,7 +1,5 @@
-import {
-  IFindMoviesByFilters,
-  MoviesRepository,
-} from '@domain/domain-repositories/MoviesRepository';
+import { IFindMoviesByFilters } from '@app/entities/FindMoviesByFilter';
+import { MoviesRepository } from '@domain/domain-repositories/MoviesRepository';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
