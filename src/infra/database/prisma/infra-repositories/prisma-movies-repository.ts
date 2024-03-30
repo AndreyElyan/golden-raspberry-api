@@ -1,4 +1,7 @@
-import { MoviesRepository } from '@domain/domain-repositories/MoviesRepository';
+import {
+  IFindMoviesByFilters,
+  MoviesRepository,
+} from '@domain/domain-repositories/MoviesRepository';
 import Movie from '@domain/models/Movie';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
@@ -69,13 +72,8 @@ export class PrismaMoviesRepository implements MoviesRepository {
     return movies;
   }
 
-  findMoviesByFilters(
-    year: string,
-    studio: string,
-    producer: string,
-    winner: string,
-    title: string,
-  ): Promise<Movie[]> {
+  findMoviesByFilters(filters: IFindMoviesByFilters): Promise<Movie[]> {
+    const { year, studio, producer, winner, title } = filters;
     const movies = this.prismaService.movie.findMany({
       where: {
         year,
@@ -85,7 +83,7 @@ export class PrismaMoviesRepository implements MoviesRepository {
         producers: {
           contains: producer,
         },
-        winner,
+        winner: winner ? 'yes' : '',
         title: {
           contains: title,
         },
