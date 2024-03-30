@@ -18,8 +18,8 @@ async function insertData() {
           headers: ['year', 'title', 'studios', 'producers', 'winner'],
         }),
       )
-      .on('data', (row) => {
-        data.push(row);
+      .on('data', (row, index) => {
+        index !== 0 && data.push(row);
       })
       .on('end', async () => {
         const hasTheTableData = await prisma.movie.findMany();
