@@ -14,8 +14,8 @@
       "@domain/*": ["src/domain/*"],
       "@infra/*": ["src/infra/*"],
       "@models/*": ["src/domain/models/*"],
-      "@app/`*`": ["src/app/*"],
-      "@use-cases/*": ["src/app/use-ases/*"],
+      "@app/*": ["src/app/*"],
+      "@use-cases/*": ["src/app/use-cases/*"],
       "@infra-repositories/*": [
         "src/infra/database/prisma/infra-repositories/*"
       ],
