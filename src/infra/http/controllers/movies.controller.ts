@@ -4,6 +4,8 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { FindMovieResponseDto } from '../dtos/movies/find-movie.dto';
 import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWithMaxIntervalUseCase';
 import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTwoAwardsFaster';
+import { FindYearsWithMultipleWinnersUseCase } from '@app/use-cases/findYearsWithMultipleWinnersUseCase';
+import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWithMostVictories';
 
 @Controller('movies')
 @ApiTags('Movies')
@@ -12,6 +14,8 @@ export class MoviesController {
     private findManyMoviesMethod: FindManyMovies,
     private getProducerWithLongestIntervalMethod: GetProducerWithMaxIntervalUseCase,
     private getProducerWithTwoAwardsFasterMethod: GetProducerWithTwoAwardsFaster,
+    private findYearsWithMultipleWinnersMethod: FindYearsWithMultipleWinnersUseCase,
+    private orderByStudiosWithMostVictoriesMethod: OrderByStudiosWithMostVictories,
   ) {}
 
   @Get('/')
@@ -43,5 +47,25 @@ export class MoviesController {
   })
   async findProducerWithTwoAwardsFaster() {
     return await this.getProducerWithTwoAwardsFasterMethod.execute();
+  }
+
+  @Get('/years-with-multiple-winners')
+  @ApiOperation({ summary: 'Get Years With Multiple Winners' })
+  @ApiResponse({
+    status: 201,
+    description: 'Years With Multiple Winners',
+  })
+  async findYearsWithMultipleWinners() {
+    return await this.findYearsWithMultipleWinnersMethod.execute();
+  }
+
+  @Get('/studios-with-most-victories')
+  @ApiOperation({ summary: 'Get Studios With Most Victories' })
+  @ApiResponse({
+    status: 201,
+    description: 'Studios With Most Victories',
+  })
+  async orderByStudiosWithMostVictories() {
+    return await this.orderByStudiosWithMostVictoriesMethod.execute();
   }
 }

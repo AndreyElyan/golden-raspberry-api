@@ -6,6 +6,8 @@ import { MoviesController } from './controllers/movies.controller';
 import { FindManyMovies } from '@app/use-cases/findManyMoviesUseCase';
 import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWithMaxIntervalUseCase';
 import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTwoAwardsFaster';
+import { FindYearsWithMultipleWinnersUseCase } from '@app/use-cases/findYearsWithMultipleWinnersUseCase';
+import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWithMostVictories';
 
 @Module({
   imports: [DatabaseModule],
@@ -15,6 +17,8 @@ import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTw
     FindManyMovies,
     GetProducerWithMaxIntervalUseCase,
     GetProducerWithTwoAwardsFaster,
+    FindYearsWithMultipleWinnersUseCase,
+    OrderByStudiosWithMostVictories,
   ],
   controllers: [MoviesController],
 })
