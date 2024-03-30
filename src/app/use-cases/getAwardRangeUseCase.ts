@@ -8,9 +8,7 @@ export class GetAwardsRangeUseCase {
   constructor(private moviesRepository: MoviesRepository) {}
 
   private getProducerMovies(movies: Movie[], producer: string) {
-    return movies.filter(
-      (movie) => movie.producers.includes(producer) && movie.winner,
-    );
+    return movies.filter((movie) => movie.producers.includes(producer));
   }
 
   private sortMoviesByYear(movies: Movie[]) {
@@ -21,6 +19,7 @@ export class GetAwardsRangeUseCase {
 
   private calculateProducerAwardIntervals(movies: Movie[], producer: string) {
     const producerMovies = this.getProducerMovies(movies, producer);
+
     const sortedMovies = this.sortMoviesByYear(producerMovies);
 
     return sortedMovies
@@ -28,6 +27,7 @@ export class GetAwardsRangeUseCase {
         if (index === 0) return null;
         const previousWin = parseInt(sortedMovies[index - 1].year);
         const followingWin = parseInt(movie.year);
+
         return {
           producer,
           interval: followingWin - previousWin,
@@ -35,11 +35,12 @@ export class GetAwardsRangeUseCase {
           followingWin,
         };
       })
-      .filter(Boolean);
+      .filter((interval) => interval !== null);
   }
 
   async execute() {
-    const movies: Movie[] = await this.moviesRepository.findManyMovies();
+    const movies: Movie[] =
+      await this.moviesRepository.findManyMoviesByWinner();
     const producers = [
       ...new Set(movies.flatMap((movie) => movie.producers.split(/ and |, /))),
     ];
