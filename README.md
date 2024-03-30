@@ -92,6 +92,9 @@ src
 
 - [Swagger](http://localhost:3000/api)
 
+- ![image](https://github.com/AndreyElyan/golden-raspberry-api/assets/46023665/abad6417-b7de-4af0-9290-58c1e7ba4988)
+
+
 ### TESTS
 
 We have 100% dude!
