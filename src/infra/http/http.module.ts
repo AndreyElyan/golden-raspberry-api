@@ -4,8 +4,6 @@ import { PrismaService } from '@infra/database/prisma/prisma.service';
 import { Module } from '@nestjs/common';
 import { MoviesController } from './controllers/movies.controller';
 import { FindManyMovies } from '@app/use-cases/findManyMoviesUseCase';
-import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWithMaxIntervalUseCase';
-import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTwoAwardsFaster';
 import { FindYearsWithMultipleWinnersUseCase } from '@app/use-cases/findYearsWithMultipleWinnersUseCase';
 import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWithMostVictories';
 import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCase';
@@ -19,8 +17,6 @@ import { GetAwardsRangeUseCase } from '@app/use-cases/getAwardRangeUseCase';
     PrismaMoviesRepository,
     PrismaService,
     FindManyMovies,
-    GetProducerWithMaxIntervalUseCase,
-    GetProducerWithTwoAwardsFaster,
     FindYearsWithMultipleWinnersUseCase,
     OrderByStudiosWithMostVictories,
     FindWinnersByYearUseCase,

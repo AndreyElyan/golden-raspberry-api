@@ -2,8 +2,7 @@ import { FindManyMovies } from '@app/use-cases/findManyMoviesUseCase';
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { FindMovieResponseDto } from '../dtos/movies/find-movie.dto';
-import { GetProducerWithMaxIntervalUseCase } from '@app/use-cases/getProducerWithMaxIntervalUseCase';
-import { GetProducerWithTwoAwardsFaster } from '@app/use-cases/getProducerWithTwoAwardsFaster';
+
 import { FindYearsWithMultipleWinnersUseCase } from '@app/use-cases/findYearsWithMultipleWinnersUseCase';
 import { OrderByStudiosWithMostVictories } from '@app/use-cases/orderByStudiosWithMostVictories';
 import { FindWinnersByYearUseCase } from '@app/use-cases/findWinnersByYearUseCase';
@@ -17,8 +16,6 @@ import { GetAwardsRangeUseCase } from '@app/use-cases/getAwardRangeUseCase';
 export class MoviesController {
   constructor(
     private findManyMoviesMethod: FindManyMovies,
-    private getProducerWithLongestIntervalMethod: GetProducerWithMaxIntervalUseCase,
-    private getProducerWithTwoAwardsFasterMethod: GetProducerWithTwoAwardsFaster,
     private findYearsWithMultipleWinnersMethod: FindYearsWithMultipleWinnersUseCase,
     private orderByStudiosWithMostVictoriesMethod: OrderByStudiosWithMostVictories,
     private FindWinnersByYearUseCaseMethod: FindWinnersByYearUseCase,
@@ -78,26 +75,6 @@ export class MoviesController {
   })
   async searchMovieByText(@Param('text') text: string) {
     return await this.searchMovieByTextMethod.execute(text);
-  }
-
-  @Get('/producer-with-longest-interval')
-  @ApiOperation({ summary: 'Get Producer With Longest Interval' })
-  @ApiResponse({
-    status: 201,
-    description: 'Producer With Longest Interval',
-  })
-  async findProducerWithLongestInterval() {
-    return await this.getProducerWithLongestIntervalMethod.execute();
-  }
-
-  @Get('/producer-with-two-awards-faster')
-  @ApiOperation({ summary: 'Get Producer With Two Awards Faster' })
-  @ApiResponse({
-    status: 201,
-    description: 'Producer With Two Awards Faster',
-  })
-  async findProducerWithTwoAwardsFaster() {
-    return await this.getProducerWithTwoAwardsFasterMethod.execute();
   }
 
   @Get('/years-with-multiple-winners')

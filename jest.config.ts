@@ -8,7 +8,15 @@ const config: Config = {
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
-  collectCoverageFrom: ['**/*.(t|j)s'],
+  rootDir: '.',
+  collectCoverageFrom: [
+    'src/**/*.{ts,js}', // Include all ts and js files
+    '!src/**/*.spec.{ts,js}', // Exclude all test files
+    '!src/**/*mock*.{ts,js}', // Exclude all mock files
+    '!**/node_modules/**', // Exclude node_modules
+    '!**/dist/**', // Exclude dist
+    '!**/coverage/**', // Exclude coverage
+  ],
   coverageDirectory: './coverage',
   testEnvironment: 'node',
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {

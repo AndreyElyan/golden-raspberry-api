@@ -5,6 +5,8 @@ import { IFindMoviesByFilters } from '@app/entities/FindMoviesByFilter';
 import { FindWinnersByYearUseCase } from './findWinnersByYearUseCase';
 import { FindYearsWithMultipleWinnersUseCase } from './findYearsWithMultipleWinnersUseCase';
 import { GetAwardsRangeUseCase } from './getAwardRangeUseCase';
+import { OrderByStudiosWithMostVictories } from './orderByStudiosWithMostVictories';
+import { SearchMovieByTextUseCase } from './searchMovieByTextUseCase';
 
 let moviesRepository: InMemoryMoviesRepository;
 
@@ -18,6 +20,9 @@ describe('UseCases', () => {
   let findWinnersByYear: FindWinnersByYearUseCase;
   let findYearsWithMultipleWinners: FindYearsWithMultipleWinnersUseCase;
   let getAwardRange: GetAwardsRangeUseCase;
+  let orderByStudiosWithMoreAwards: OrderByStudiosWithMostVictories;
+  let searchMovieByText: SearchMovieByTextUseCase;
+
   beforeEach(() => {
     moviesRepository = new InMemoryMoviesRepository();
     findManyMovies = new FindManyMovies(moviesRepository);
@@ -29,6 +34,10 @@ describe('UseCases', () => {
       moviesRepository,
     );
     getAwardRange = new GetAwardsRangeUseCase(moviesRepository);
+    orderByStudiosWithMoreAwards = new OrderByStudiosWithMostVictories(
+      moviesRepository,
+    );
+    searchMovieByText = new SearchMovieByTextUseCase(moviesRepository);
   });
 
   it('should return all movies', async () => {
@@ -72,5 +81,42 @@ describe('UseCases', () => {
         },
       ],
     });
+  });
+
+  it('should return order by studios with more awards', async () => {
+    const movies = await orderByStudiosWithMoreAwards.execute();
+
+    const studio = {
+      studio: 'Columbia Pictures',
+      numberOfVictories: 7,
+      winners: [
+        {
+          title: 'Rambo: First Blood Part II',
+          year: '1985',
+          producers: ['Buzz Feitshans'],
+        },
+        {
+          title: 'Leonard Part 6',
+          year: '1987',
+          producers: ['Bill Cosby'],
+        },
+        {
+          title: 'Striptease',
+          year: '1996',
+          producers: ['Andrew Bergman', 'Mike Lobell'],
+        },
+      ],
+    };
+
+    const result = movies.filter(
+      (movie) => movie.studio === 'Columbia Pictures',
+    )[0];
+
+    expect(result.studio).toEqual(studio.studio);
+  });
+
+  it('should return movies by text', async () => {
+    const movies = await searchMovieByText.execute('The');
+    expect(movies).toHaveLength(1);
   });
 });
