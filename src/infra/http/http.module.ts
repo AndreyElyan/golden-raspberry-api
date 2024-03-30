@@ -4,7 +4,6 @@ import { PrismaService } from '@infra/database/prisma/prisma.service';
 import { Module } from '@nestjs/common';
 import { MoviesController } from './controllers/movies.controller';
 import { FindManyMovies } from '@app/use-cases/findManyMoviesUseCase';
-import { MoviesRepository } from '@domain/domain-repositories/MoviesRepository';
 
 @Module({
   imports: [DatabaseModule],
