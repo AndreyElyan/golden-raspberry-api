@@ -91,3 +91,10 @@ src
 ### API
 
 - [Swagger](http://localhost:3000/api)
+
+### TESTS
+
+We have 100% dude!
+
+![image](https://github.com/AndreyElyan/golden-raspberry-api/assets/46023665/98b7afdf-cdd1-43d9-a24c-609503e2ecb8)
+
