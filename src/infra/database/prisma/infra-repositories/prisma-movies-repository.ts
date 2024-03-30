@@ -72,8 +72,11 @@ export class PrismaMoviesRepository implements MoviesRepository {
 
   findMoviesByFilters(filters: IFindMoviesByFilters): Promise<Movie[]> {
     const { year, studio, producer, winner, title, page } = filters;
+    const isWinner = winner ? 'yes' : undefined;
+
     const movies = this.prismaService.movie.findMany({
       where: {
+        winner: isWinner,
         year,
         studios: {
           contains: studio,
@@ -81,7 +84,6 @@ export class PrismaMoviesRepository implements MoviesRepository {
         producers: {
           contains: producer,
         },
-        winner: winner ? 'yes' : '',
         title: {
           contains: title,
         },

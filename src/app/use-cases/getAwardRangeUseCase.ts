@@ -20,6 +20,9 @@ export class GetAwardsRangeUseCase {
   private calculateProducerAwardIntervals(movies: Movie[], producer: string) {
     const producerMovies = this.getProducerMovies(movies, producer);
 
+    if (producerMovies.length <= 1) {
+      return [];
+    }
     const sortedMovies = this.sortMoviesByYear(producerMovies);
 
     return sortedMovies
@@ -41,6 +44,7 @@ export class GetAwardsRangeUseCase {
   async execute() {
     const movies: Movie[] =
       await this.moviesRepository.findManyMoviesByWinner();
+
     const producers = [
       ...new Set(movies.flatMap((movie) => movie.producers.split(/ and |, /))),
     ];

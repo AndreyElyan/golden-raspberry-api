@@ -1,42 +1,17 @@
 import { IFindMoviesByFilters } from '@app/entities/FindMoviesByFilter';
 import { MoviesRepository } from '@domain/domain-repositories/MoviesRepository';
 import Movie from '@domain/models/Movie';
+import { moviesMock, winnerMovies } from './movies.mock';
 
 export class InMemoryMoviesRepository implements MoviesRepository {
-  public movies: Movie[] = [];
-
   public filterMoviesRequest = InMemoryMoviesRepository;
 
-  public findManyMoviesResponse: Movie[] = [
-    {
-      id: 203,
-      year: '2019',
-      title: 'Cats',
-      studios: 'Universal Pictures',
-      producers: 'Debra Hayward, Tim Bevan, Eric Fellner, and Tom Hooper',
-      winner: 'yes',
-    },
-    {
-      id: 206,
-      year: '2019',
-      title: 'A Madea Family Funeral',
-      studios: 'Lionsgate',
-      producers: 'Ozzie Areu, Will Areu, and Mark E. Swinton',
-      winner: '',
-    },
-    {
-      id: 207,
-      year: '2019',
-      title: 'Rambo: Last Blood',
-      studios: 'Lionsgate',
-      producers:
-        'Avi Lerner, Kevin King Templeton, Yariv Lerner, and Les Weldon',
-      winner: '',
-    },
-  ];
+  public movies: Movie[] = moviesMock;
+
+  public winnerMovies: Movie[] = winnerMovies;
 
   async findManyMovies(): Promise<Movie[]> {
-    return this.findManyMoviesResponse;
+    return this.movies;
   }
 
   async getMovieById(id: number): Promise<Movie | null> {
@@ -56,7 +31,7 @@ export class InMemoryMoviesRepository implements MoviesRepository {
   }
 
   async findManyMoviesByWinner(): Promise<Movie[]> {
-    return this.movies.filter((movie) => movie.winner);
+    return this.winnerMovies.filter((movie) => movie.winner === 'yes');
   }
 
   async findManyMoviesByTitle(title: string): Promise<Movie[]> {
@@ -66,10 +41,9 @@ export class InMemoryMoviesRepository implements MoviesRepository {
   async findMoviesByFilters(filters: IFindMoviesByFilters): Promise<Movie[]> {
     return this.movies.filter((movie) => {
       return (
-        (!filters.year || movie.year === filters.year) &&
-        (!filters.studio || movie.studios === filters.studio) &&
-        (!filters.producer || movie.producers === filters.producer) &&
-        (!filters.title || movie.title === filters.title)
+        movie.year === filters.year ||
+        movie.studios === filters.studio ||
+        movie.producers === filters.producer
       );
     });
   }
