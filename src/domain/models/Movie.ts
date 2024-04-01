@@ -5,6 +5,7 @@ interface Movie {
   studios: string;
   producers: string;
   winner: string;
+  urlImage: string;
 }
 
 export default Movie;

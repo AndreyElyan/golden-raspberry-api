@@ -5,7 +5,7 @@ const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
-const csvFilePath = 'src/infra/database/seed/csv/movieList.csv';
+const csvFilePath = 'src/infra/database/seed/csv/movieListUpdated.csv';
 
 export default async function insertData() {
   const data = [];
@@ -15,7 +15,14 @@ export default async function insertData() {
       .pipe(
         parse({
           separator: ';',
-          headers: ['year', 'title', 'studios', 'producers', 'winner'],
+          headers: [
+            'year',
+            'title',
+            'studios',
+            'producers',
+            'winner',
+            'imageUrl',
+          ],
         }),
       )
       .on('data', (row, index) => {
@@ -36,6 +43,7 @@ export default async function insertData() {
               studios: row.studios,
               producers: row.producers,
               winner: row.winner,
+              urlImage: row.imageUrl,
             },
           });
         }

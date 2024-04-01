@@ -6,6 +6,8 @@ export const moviesMock = [
     studios: 'Universal Pictures',
     producers: 'Debra Hayward, Tim Bevan, Eric Fellner, and Tom Hooper',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 206,
@@ -14,6 +16,8 @@ export const moviesMock = [
     studios: 'Lionsgate',
     producers: 'Ozzie Areu, Will Areu, and Mark E. Swinton',
     winner: '',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 207,
@@ -22,6 +26,8 @@ export const moviesMock = [
     studios: 'Lionsgate',
     producers: 'Avi Lerner, Kevin King Templeton, Yariv Lerner, and Les Weldon',
     winner: '',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 182,
@@ -31,6 +37,8 @@ export const moviesMock = [
     producers:
       'Simon Kinberg, Matthew Vaughn, Hutch Parker, Robert Kulzer and Gregory Goodman',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 183,
@@ -39,6 +47,8 @@ export const moviesMock = [
     studios: 'Universal Pictures, Focus Features',
     producers: 'Michael De Luca, Dana Brunetti and E. L. James',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 184,
@@ -47,6 +57,8 @@ export const moviesMock = [
     studios: 'Warner Bros.',
     producers: 'Grant Hill and The Wachowskis',
     winner: '',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 185,
@@ -55,6 +67,8 @@ export const moviesMock = [
     studios: 'Columbia Pictures',
     producers: 'Todd Garner, Kevin James and Adam Sandler',
     winner: '',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 186,
@@ -63,6 +77,8 @@ export const moviesMock = [
     studios: 'Columbia Pictures',
     producers: 'Adam Sandler, Chris Columbus, Mark Radcliffe and Allen Covert',
     winner: '',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
 ];
 
@@ -74,6 +90,8 @@ export const winnerMovies = [
     studios: 'Associated Film Distribution',
     producers: 'Allan Carr',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 12,
@@ -82,6 +100,8 @@ export const winnerMovies = [
     studios: 'Paramount Pictures',
     producers: 'Frank Yablans',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 17,
@@ -90,6 +110,8 @@ export const winnerMovies = [
     studios: 'MGM',
     producers: 'Mitsuharu Ishii',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 22,
@@ -98,6 +120,8 @@ export const winnerMovies = [
     studios: 'Universal Studios',
     producers: 'Robert R. Weston',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 27,
@@ -106,6 +130,8 @@ export const winnerMovies = [
     studios: 'Cannon Films',
     producers: 'Bo Derek',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 32,
@@ -114,6 +140,8 @@ export const winnerMovies = [
     studios: 'Columbia Pictures',
     producers: 'Buzz Feitshans',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 37,
@@ -122,6 +150,8 @@ export const winnerMovies = [
     studios: 'Universal Studios',
     producers: 'Gloria Katz',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 38,
@@ -130,6 +160,8 @@ export const winnerMovies = [
     studios: 'Warner Bros.',
     producers: 'Bob Cavallo, Joe Ruffalo and Steve Fargnoli',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 42,
@@ -138,6 +170,8 @@ export const winnerMovies = [
     studios: 'Columbia Pictures',
     producers: 'Bill Cosby',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 47,
@@ -146,6 +180,8 @@ export const winnerMovies = [
     studios: 'Touchstone Pictures',
     producers: 'Ted Field and Robert W. Cort',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 52,
@@ -154,6 +190,8 @@ export const winnerMovies = [
     studios: 'Paramount Pictures',
     producers: 'Harve Bennett',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 57,
@@ -162,6 +200,8 @@ export const winnerMovies = [
     studios: '20th Century Fox',
     producers: 'Steven Perry and Joel Silver',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 58,
@@ -170,6 +210,8 @@ export const winnerMovies = [
     studios: 'Triumph Releasing',
     producers: 'Bo Derek',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 62,
@@ -178,6 +220,8 @@ export const winnerMovies = [
     studios: 'TriStar Pictures',
     producers: 'Joel Silver',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 67,
@@ -186,6 +230,8 @@ export const winnerMovies = [
     studios: '20th Century Fox',
     producers: 'Carol Baum and Howard Rosenman',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 72,
@@ -194,6 +240,8 @@ export const winnerMovies = [
     studios: 'Paramount Pictures',
     producers: 'Sherry Lansing',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 77,
@@ -202,6 +250,8 @@ export const winnerMovies = [
     studios: 'Hollywood Pictures',
     producers: 'Buzz Feitshans and David Matalon',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 82,
@@ -210,6 +260,8 @@ export const winnerMovies = [
     studios: 'MGM, United Artists',
     producers: 'Charles Evans and Alan Marshall',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 87,
@@ -218,6 +270,8 @@ export const winnerMovies = [
     studios: 'Columbia Pictures, Castle Rock Entertainment',
     producers: 'Andrew Bergman and Mike Lobell',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 92,
@@ -226,6 +280,8 @@ export const winnerMovies = [
     studios: 'Warner Bros.',
     producers: 'Kevin Costner, Steve Tisch and Jim Wilson',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 97,
@@ -234,6 +290,8 @@ export const winnerMovies = [
     studios: 'Hollywood Pictures',
     producers: 'Ben Myron and Joe Eszterhas',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 102,
@@ -242,6 +300,8 @@ export const winnerMovies = [
     studios: 'Warner Bros.',
     producers: 'Jon Peters and Barry Sonnenfeld',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 107,
@@ -250,6 +310,8 @@ export const winnerMovies = [
     studios: 'Warner Bros., Franchise Pictures',
     producers: 'Jonathan D. Krane, Elie Samaha and John Travolta',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 112,
@@ -258,6 +320,8 @@ export const winnerMovies = [
     studios: '20th Century Fox',
     producers: 'Larry Brezner, Howard Lapides and Lauren Lloyd',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 117,
@@ -266,6 +330,8 @@ export const winnerMovies = [
     studios: 'Screen Gems',
     producers: 'Matthew Vaughn',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 122,
@@ -274,6 +340,8 @@ export const winnerMovies = [
     studios: 'Columbia Pictures, Revolution Studios',
     producers: 'Martin Brest and Casey Silver',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 127,
@@ -282,6 +350,8 @@ export const winnerMovies = [
     studios: 'Warner Bros.',
     producers: 'Denise Di Novi and Edward McDonnell',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 132,
@@ -291,6 +361,8 @@ export const winnerMovies = [
     producers:
       'John Mallory Asher, BJ Davis, Rod Hamilton, Kimberley Kates, Michael Manasseri, Jenny McCarthy and Trent Walford',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 137,
@@ -299,6 +371,8 @@ export const winnerMovies = [
     studios: 'MGM, C2 Pictures',
     producers: 'Mario Kassar, Joel B. Michaels and Andrew G. Vajna',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 147,
@@ -307,6 +381,8 @@ export const winnerMovies = [
     studios: 'Paramount Pictures',
     producers: 'Gary Barber, Michael DeLuca and Mike Myers',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 152,
@@ -315,6 +391,8 @@ export const winnerMovies = [
     studios: 'Paramount Pictures, DreamWorks, Hasbro',
     producers: 'Lorenzo di Bonaventura, Ian Bryce, Tom DeSanto and Don Murphy',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 157,
@@ -324,6 +402,8 @@ export const winnerMovies = [
     producers:
       'Frank Marshall, Kathleen Kennedy, Sam Mercer and M. Night Shyamalan',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 162,
@@ -332,6 +412,8 @@ export const winnerMovies = [
     studios: 'Columbia Pictures',
     producers: 'Todd Garner, Jack Giarraputo and Adam Sandler',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 167,
@@ -340,6 +422,8 @@ export const winnerMovies = [
     studios: 'Summit Entertainment',
     producers: 'Wyck Godfrey, Stephenie Meyer and Karen Rosenfelt',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 172,
@@ -349,6 +433,8 @@ export const winnerMovies = [
     producers:
       'Peter Farrelly, Ryan Kavanaugh, John Penotti and Charles B. Wessler',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 177,
@@ -357,6 +443,8 @@ export const winnerMovies = [
     studios: 'Samuel Goldwyn Films',
     producers: 'Darren Doane, Raphi Henley, Amanda Rosser and David Shannon',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 182,
@@ -366,6 +454,8 @@ export const winnerMovies = [
     producers:
       'Simon Kinberg, Matthew Vaughn, Hutch Parker, Robert Kulzer and Gregory Goodman',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 183,
@@ -374,6 +464,8 @@ export const winnerMovies = [
     studios: 'Universal Pictures, Focus Features',
     producers: 'Michael De Luca, Dana Brunetti and E. L. James',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 187,
@@ -382,6 +474,8 @@ export const winnerMovies = [
     studios: 'Quality Flix',
     producers: 'Gerald R. Molen',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 193,
@@ -390,6 +484,8 @@ export const winnerMovies = [
     studios: 'Columbia Pictures',
     producers: 'Michelle Raimo Kouyate',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 198,
@@ -398,6 +494,8 @@ export const winnerMovies = [
     studios: 'Columbia Pictures',
     producers: 'Will Ferrell, Adam McKay, Jimmy Miller and Clayton Townsend',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
   {
     id: 203,
@@ -406,5 +504,7 @@ export const winnerMovies = [
     studios: 'Universal Pictures',
     producers: 'Debra Hayward, Tim Bevan, Eric Fellner, and Tom Hooper',
     winner: 'yes',
+    urlImage:
+      'https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._SL110_CR21,0,74,110_AL_.jpg',
   },
 ];
