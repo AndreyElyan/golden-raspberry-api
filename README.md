@@ -9,7 +9,7 @@
 
 ```bash
 $ yarn install
-$ npx migrate dev
+$ npx prisma migrate dev  (mandatory)
 ```
 
 ## Running the app
