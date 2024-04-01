@@ -24,7 +24,7 @@ export class MoviesController {
     private getAwardRangeUseCaseMethod: GetAwardsRangeUseCase,
   ) {}
 
-  @Get('/')
+  @Get('/all')
   @ApiOperation({ summary: 'Get All Movies' })
   @ApiResponse({
     status: 201,
@@ -45,7 +45,7 @@ export class MoviesController {
     return await this.getAwardRangeUseCaseMethod.execute();
   }
 
-  @Post('/filter')
+  @Post('/')
   @ApiOperation({ summary: 'Get Movies By Filters' })
   @ApiResponse({
     status: 201,
