@@ -14,11 +14,30 @@ describe('Insert data', () => {
     await prisma.$disconnect();
   });
 
+  it('should run seed script', (done) => {
+    exec('npm run seed', (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        done(error);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        done(new Error(stderr));
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+
+      done();
+    });
+  });
+
   it('should insert data', async () => {
     jest.spyOn(console, 'log').mockImplementation(() => {
       return;
     });
-    await insertData();
+
+    exec('npm run seed');
 
     const data = await prisma.movie.findMany();
 
@@ -42,23 +61,5 @@ describe('Insert data', () => {
     const response = await insertData();
 
     expect(response).toBe(undefined);
-  });
-
-  it('should run seed script', (done) => {
-    exec('npm run seed', (error, stdout, stderr) => {
-      if (error) {
-        console.log(`error: ${error.message}`);
-        done(error);
-        return;
-      }
-      if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        done(new Error(stderr));
-        return;
-      }
-      console.log(`stdout: ${stdout}`);
-
-      done();
-    });
   });
 });
