@@ -25,8 +25,8 @@ export default async function insertData() {
           ],
         }),
       )
-      .on('data', (row, index) => {
-        index !== 0 && data.push(row);
+      .on('data', (row) => {
+        row.year !== 'year' && data.push(row);
       })
       .on('end', async () => {
         const hasTheTableData = await prisma.movie.findMany();
