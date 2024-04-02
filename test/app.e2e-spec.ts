@@ -29,6 +29,7 @@ describe('Insert data', () => {
     expect(data[0].id).toBe(1);
 
     expect(data[0].title).toBe("Can't Stop the Music");
+    expect(data[205].title).toBe('Rambo: Last Blood');
 
     expect(data[0].year).toBe('1980');
   });
