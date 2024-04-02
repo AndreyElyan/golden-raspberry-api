@@ -14,6 +14,9 @@ describe('Insert data', () => {
   });
 
   it('should insert data', async () => {
+    jest.spyOn(console, 'log').mockImplementation(() => {
+      return;
+    });
     await insertData();
 
     const data = await prisma.movie.findMany();
