@@ -1,6 +1,7 @@
 import insertData from '../src/infra/database/seed/insert-data';
 import { PrismaClient } from '@prisma/client';
 import { FIND_ALL_MOVIES } from './mocks';
+import { exec } from 'child_process';
 
 describe('Insert data', () => {
   let prisma: PrismaClient;
@@ -40,5 +41,23 @@ describe('Insert data', () => {
     const response = await insertData();
 
     expect(response).toBe(undefined);
+  });
+
+  it('should run seed script', (done) => {
+    exec('npm run seed', (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        done(error);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        done(new Error(stderr));
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+
+      done();
+    });
   });
 });
