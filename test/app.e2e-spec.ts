@@ -30,7 +30,6 @@ describe('Insert data', () => {
   });
 
   it('should not insert data if already exists', async () => {
-    // Mock console.log
     jest.spyOn(console, 'log').mockImplementation(() => {
       return;
     });
