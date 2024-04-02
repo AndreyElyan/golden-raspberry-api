@@ -5,5 +5,16 @@
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@domain/*": ["src/domain/*"],
+    "@infra/*": ["src/infra/*"],
+    "@models/*": ["src/domain/models/*"],
+    "@app/*": ["src/app/*"],
+    "@use-cases/*": ["src/app/use-cases/*"],
+    "@infra-repositories/*": ["src/infra/database/prisma/infra-repositories/*"],
+    "@helpers/*": ["src/helpers/*"],
+    "domain-repositories/*": ["src/domain/domain-repositories/*"],
+    "@test/*": ["./test/*"]
   }
 }

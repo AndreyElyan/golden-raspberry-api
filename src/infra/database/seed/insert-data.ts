@@ -5,7 +5,7 @@ const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
-const csvFilePath = 'src/infra/database/seed/csv/movieListUpdated.csv';
+const csvFilePath = 'src/infra/database/seed/csv/movieList.csv';
 
 export default async function insertData() {
   const data = [];
@@ -34,6 +34,7 @@ export default async function insertData() {
           console.log('Data already inserted');
           return;
         }
+
         console.log('Inserting data...');
         for (const row of data) {
           await prisma.movie.create({
@@ -43,7 +44,7 @@ export default async function insertData() {
               studios: row.studios,
               producers: row.producers,
               winner: row.winner,
-              urlImage: row.imageUrl,
+              urlImage: row.imageUrl || '',
             },
           });
         }
